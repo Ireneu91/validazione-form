@@ -11,12 +11,19 @@ use Laminas\Escaper\Escaper;
 final class FormController
 {
     private Escaper $esc;
+    private readonly ContactFormValidator $validator;
 
-    public function __construct(
-        private readonly ContactFormValidator $validator
-    ) {
+    public function __construct(ContactFormValidator $validator) {
+        $this->validator = $validator;
         $this->esc = new Escaper('utf-8');
     }
+
+    //--- oppure la proprietà si scrive direttamente nel costruttore senza ripeterla ---//
+    // public function __construct(
+    //     private readonly ContactFormValidator $validator
+    // ) {
+    //     $this->esc = new Escaper('utf-8');
+    // }
 
     public function showForm(Request $request): Response
     {
@@ -63,7 +70,8 @@ HTML;
      */
     private function renderForm(string $title, array $errors, array $old): string
     {
-        $e = fn(string $v) => $this->esc->escapeHtml($v);
+        // converte a stringa $v e poi la passa, funzione Lambda
+        $e = fn(string $v) => $this->esc->escapeHtml($v); // escaping per non far inserire cose strane
 
         $err = function (string $key) use ($errors, $e): string {
             return isset($errors[$key])

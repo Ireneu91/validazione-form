@@ -21,7 +21,7 @@ final class ContactFormValidator
             $errors['name'] = 'Il nome è obbligatorio (min 2 caratteri).';
         }
 
-        if ($email === '' || filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+        if ($email === '' || filter_var($email, FILTER_VALIDATE_EMAIL) === false) { // FILTER_VALIDATE_EMAIL della libreria del Composer
             $errors['email'] = 'Inserisci una email valida.';
         }
 
@@ -40,8 +40,8 @@ final class ContactFormValidator
 
     private function stripTagsAndNormalize(string $value): string
     {
-        $value = strip_tags($value);
-        $value = preg_replace('/\s+/u', ' ', $value) ?? $value;
+        $value = strip_tags($value);  // togliere tutti i tags html e js per sicurezza
+        $value = preg_replace('/\s+/u', ' ', $value) ?? $value; // sostituisci più spazi con uno solo
         return trim($value);
     }
 }

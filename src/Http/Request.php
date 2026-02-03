@@ -39,3 +39,5 @@ final class Request
         return $this->post;
     }
 }
+
+// localhost:8000/?X=1
