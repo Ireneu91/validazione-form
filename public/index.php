@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-use App\App;
+use App\App; // App = src (è scritto in composer.json)
 use App\Http\Request;
 
 require __DIR__ . '/../vendor/autoload.php';
 
 $app = new App();
-$request = Request::fromGlobals();
-$response = $app->handle($request);
+$request = Request::fromGlobals(); // metodo statico per raccogliere la richiesta del browser che immagazzino nella variabile request
+$response = $app->handle($request); // elaborazione risposta
 
-$response->send();
+$response->send(); // invio la risposta al browser

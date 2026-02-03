@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'didattica/php-form-project',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => 'bc1164bc84f840958f078a4444dacb16efb11c63',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '4abc9d6b22b6524b5b1b1e6050eb10e5adc1b466',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'didattica/php-form-project' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'bc1164bc84f840958f078a4444dacb16efb11c63',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '4abc9d6b22b6524b5b1b1e6050eb10e5adc1b466',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

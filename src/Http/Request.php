@@ -18,7 +18,7 @@ final class Request
 
     public static function fromGlobals(): self
     {
-        return new self($_GET, $_POST, $_SERVER);
+        return new self($_GET, $_POST, $_SERVER); // istanzio me stesso con le variabili... ($_ vuol dire che vengono dal browser)
     }
 
     public function method(): string

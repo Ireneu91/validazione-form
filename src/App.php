@@ -19,11 +19,11 @@ final class App
 
     public function handle(Request $request): Response
     {
-        $method = $request->method();
-        $path = $request->path();
+        $method = $request->method(); // prende il metodo
+        $path = $request->path();  // prende il percorso
 
-        if ($method === 'GET' && $path === '/') {
-            return $this->formController->showForm($request);
+        if ($method === 'GET' && $path === '/') { // se è in GET e in root
+            return $this->formController->showForm($request); //
         }
 
         if ($method === 'POST' && $path === '/submit') {
