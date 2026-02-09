@@ -1,0 +1,1 @@
+{"version":2,"defects":{"App\\Tests\\RequestTest::testGet":7,"App\\Tests\\RequestTest::testPost":7},"times":{"App\\Tests\\RequestTest::testGet":0.049,"App\\Tests\\RequestTest::testPost":0.004}}

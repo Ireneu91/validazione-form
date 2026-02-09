@@ -12,3 +12,10 @@ print_r($request);
 $response = $app->handle($request); // elaborazione risposta
 
 $response->send(); // invio la risposta al browser
+
+echo "Get: \n";
+var_dump($_GET);
+echo "Post: \n";
+var_dump($_POST);
+echo "Server: \n";
+var_dump($_SERVER);
