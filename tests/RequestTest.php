@@ -68,6 +68,21 @@ class RequestTest extends TestCase {
         $this->assertStringContainsString($errore, $body);
     }
 
+    //Qualsiasi altra rotta (es. GET /nope)
+    // Deve restituire 404.
+    // Body deve contenere un marker (es. 404 Not Found).
+    public function testAltraRotta() {
+        $app = new App();
+        $request = new Request(
+            [],
+            [],
+            ['REQUEST_URI'=>'/submitto','REQUEST_METHOD'=>'GET']
+        );
 
+        $response = $app->handle($request);
+        $body= $response->body();
+        $notFound = "404";
+        $this->assertStringContainsString($notFound, $body);
+    }
 
 }
