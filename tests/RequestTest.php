@@ -85,4 +85,17 @@ class RequestTest extends TestCase {
         $this->assertStringContainsString($notFound, $body);
     }
 
+    public function testPath() {
+        $app = new App();
+        $request = new Request(
+            [],
+            [],
+            ['REQUEST_URI'=>'/??x=1','REQUEST_METHOD'=>'GET']
+        );
+        
+        $response = $app->handle($request['REQUEST_URI']);
+        $this->assertEquals('/', $response);
+
+
+    }
 }

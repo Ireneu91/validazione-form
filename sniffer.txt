@@ -1,0 +1,9 @@
+composer require --dev squizlabs/php_codesniffer
+
+In composer.json:
+{
+  "scripts": {
+    "lint": "phpcs",
+    "lint:fix": "phpcbf"
+  }
+}
