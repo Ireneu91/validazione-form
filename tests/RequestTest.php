@@ -93,9 +93,6 @@ class RequestTest extends TestCase {
             ['REQUEST_URI'=>'/??x=1','REQUEST_METHOD'=>'GET']
         );
         
-        $response = $app->handle($request['REQUEST_URI']);
-        $this->assertEquals('/', $response);
-
-
+        $this->assertEquals('/', $request->path());
     }
 }
