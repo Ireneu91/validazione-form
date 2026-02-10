@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Http;
@@ -12,7 +13,8 @@ final class Response
         private readonly string $body,
         private readonly int $status,
         private readonly array $headers
-    ) {}
+    ) {
+    }
 
     public static function html(string $html, int $status = 200): self
     {

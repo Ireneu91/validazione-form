@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
@@ -13,7 +14,8 @@ final class FormController
     private Escaper $esc;
     private readonly ContactFormValidator $validator;
 
-    public function __construct(ContactFormValidator $validator) {
+    public function __construct(ContactFormValidator $validator)
+    {
         $this->validator = $validator;
         $this->esc = new Escaper('utf-8');
     }
